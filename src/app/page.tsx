@@ -1,3 +1,4 @@
+import CharacterTile from "./components/character-tile"
 
 export default function Home() {
   return (
