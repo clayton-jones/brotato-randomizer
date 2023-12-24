@@ -1,0 +1,30 @@
+{
+    "apprentice": {
+        "name":"Apprentice",
+        "path":"./characters/apprentice.png"
+    },
+    "arms_dealer": {
+        "name":"Arms Dealer",
+        "path":"./characters/arms_dealer.png"
+    },
+    "artificer": {
+        "name":"Artificer",
+        "path":"./characters/artificer.png"
+    },
+    "brawler": {
+        "name":"Brawler",
+        "path":"./characters/brawler.png"
+    },
+    "bull": {
+        "name":"Bull",
+        "path":"./characters/bull.png"
+    },
+    "chunky": {
+        "name":"Chunky",
+        "path":"./characters/chunky.png"
+    },
+    "crazy": {
+        "name":"Crazy",
+        "path":"./characters/crazy.png"
+    }
+}
