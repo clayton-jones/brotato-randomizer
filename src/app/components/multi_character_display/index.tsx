@@ -6,12 +6,18 @@ import CharacterTile from '../character-tile';
 type DisplayProp = {
     characters_left: string[];
     characters_finished: string[];
+    setCharactersFinished: Function
 }
 
 export default function MultiCharacterDisplay(props: DisplayProp) {
-    let {characters_left, characters_finished} = props;
+    let {characters_left, characters_finished, setCharactersFinished} = props;
     let [tabLeftActive, setTabLeftActive] = useState(true);
 
+    
+
+    function moveToCharactersLeft(character: string) {
+        
+    }
 
     return(
         <section id='display-wrapper'>
@@ -41,6 +47,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                                                     character_name={character.replace('.png','').replace('_', ' ')}
                                                     path={'./characters/' + character}
                                                     key={character}
+                                                    onClick={() => setCharactersFinished([...characters_finished, character])}
                                                 />
                                     })
                                 :
@@ -50,20 +57,23 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                     </section>
                 :
                     <section className='multi-display'>
-                        {
-                            characters_finished.length ?
-                                characters_finished.map(character => {
-                                    return <CharacterTile 
-                                                character_name={character.replace('.png','').replace('_', ' ')}
-                                                path={'./characters/' + character}
-                                                key={character}
-                                            />
-                                })
-                            :
-                                <p>You haven't marked any as beaten yet. 
-                                    If you've already beaten one or more, go to the other tab and hover the character and click the checkbox to move them to this screen.
-                                </p>
-                        }
+                        <section className='tile-wrapper'>
+                            {
+                                characters_finished.length ?
+                                    characters_finished.map(character => {
+                                        return <CharacterTile 
+                                                    character_name={character.replace('.png','').replace('_', ' ')}
+                                                    path={'./characters/' + character}
+                                                    key={character}
+                                                    onClick={() => setCharactersFinished(characters_finished.filter((char) => char != character))}
+                                                />
+                                    })
+                                :
+                                    <p>You haven't marked any as beaten yet. 
+                                        If you've already beaten one or more, go to the other tab and hover the character and click the checkbox to move them to this screen.
+                                    </p>
+                            }
+                        </section>
                     </section>
             }
             
