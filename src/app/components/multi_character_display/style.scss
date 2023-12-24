@@ -1,0 +1,59 @@
+#display-wrapper {
+    margin-top: 5em;
+}
+
+.multi-display {
+    background-color: gray;
+    height: fit-content;
+    min-height: 45vh;
+    width: 95vw;
+    border-radius: 0px 5px 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+
+    p {
+        margin: 0 12em;
+        font-size: 1.1em;
+        text-align: center;
+    }
+}
+
+#tab-wrapper {
+    display: flex;
+
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            cursor: default;
+        }
+    }
+}
+
+.display-tab {
+    background-color: rgb(83, 83, 83);
+    height: 5vh;
+    width: 12vw;
+}
+
+.left {
+    border-radius: 5px 0px 0px 0px;
+}
+
+.right {
+    border-radius: 0px 5px 0px 0px;
+}
+
+.active {
+    background-color: gray;
+}
+
+.tile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
