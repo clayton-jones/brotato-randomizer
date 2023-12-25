@@ -1,30 +1,28 @@
 #display-wrapper {
     margin-top: 5em;
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 5em;
 }
 
 .multi-display {
     background-color: gray;
-    height: fit-content;
+    height: 70vh;
+    overflow: scroll;
     // min-height: 45vh;
-    width: 95vw;
-    min-width: 350px;
-    border-radius: 0px 0px 5px 5px;
+    width: 30vw;
+    min-width: 150px;
+    border-radius: 5px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    margin-bottom: 2em;
 
     p {
-        margin: 1em 12em;
+        margin: 1em;
         font-size: 1.1em;
         text-align: center;
     }
-}
-
-#display-header {
-    display: flex;
-    justify-content: space-between;
 }
 
 #tab-wrapper {
@@ -45,8 +43,9 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(157, 19, 19);
-    border-radius: 5px 5px 0 0;
+    border-radius: 5px;
     cursor: pointer;
+    margin-top: -2em;
 
     &:hover {
         background-color: rgb(238, 14, 14);
@@ -74,6 +73,17 @@
 .active {
     background-color: gray;
     cursor: default;
+}
+
+.display-header {
+    position: sticky;
+    top: 0;
+    width: 95%;
+    text-align: center;
+    background: inherit;
+    font-size: 1.4em;
+    font-weight: 500;
+    border-bottom: 1px solid white;
 }
 
 .tile-wrapper {
