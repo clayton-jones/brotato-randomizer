@@ -1,81 +1,65 @@
 'use client'
 import './style.scss'
-import { useState, useEffect, PropsWithoutRef } from 'react';
 import CharacterTile from '../character-tile';
+import RandomButton from '../random-button';
 
 type DisplayProp = {
-    characters_left: string[];
-    characters_finished: string[];
+    charactersLeft: string[];
+    charactersFinished: string[];
     setCharactersFinished: Function
 }
 
 export default function MultiCharacterDisplay(props: DisplayProp) {
-    let {characters_left, characters_finished, setCharactersFinished} = props;
-    let [tabLeftActive, setTabLeftActive] = useState(true);
-
+    let {charactersLeft, charactersFinished, setCharactersFinished} = props;
 
     return(
+        <>
         <section id='display-wrapper'>
-            <section id='display-header'>
-                <section id='tab-wrapper'>
-                    <section 
-                        className={'display-tab left' + (tabLeftActive ? ' active' : '')} 
-                        onClick={() => setTabLeftActive(true)}
-                    >
-                        <p>To-do</p>
-                    </section> 
-                    <section 
-                        className={'display-tab right' + (tabLeftActive ? '' : ' active')} 
-                        onClick={() => setTabLeftActive(false)}
-                    >
-                        <p>Finished</p>
-                    </section>
-                </section>
-                <section id='reset' onClick={() => setCharactersFinished([])}>
-                    <p>Reset</p>
+            <section className='multi-display'>
+                <section className='display-header'>To-Do</section>
+                <section className='tile-wrapper'>
+                    {
+                        charactersLeft.length ?
+                            charactersLeft.map(character => {
+                                return <CharacterTile 
+                                            character_name={character.replace('.png','').replace('_', ' ')}
+                                            path={'./characters/' + character}
+                                            key={character}
+                                            onClick={() => setCharactersFinished([character, ...charactersFinished])}
+                                        />
+                            })
+                        :
+                            <p>Congratulations! You beat them all!</p>
+                    }
                 </section>
             </section>
 
-            {
-                tabLeftActive ? 
-                    <section className='multi-display'>
-                        <section className='tile-wrapper'>
-                            {
-                                characters_left.length ?
-                                    characters_left.map(character => {
-                                        return <CharacterTile 
-                                                    character_name={character.replace('.png','').replace('_', ' ')}
-                                                    path={'./characters/' + character}
-                                                    key={character}
-                                                    onClick={() => setCharactersFinished([...characters_finished, character])}
-                                                />
-                                    })
-                                :
-                                    <p>Congratulations! You beat them all!</p>
-                            }
-                        </section>
-                    </section>
-                :
-                    <section className='multi-display'>
-                        <section className='tile-wrapper'>
-                            {
-                                characters_finished.length ?
-                                    characters_finished.map(character => {
-                                        return <CharacterTile 
-                                                    character_name={character.replace('.png','').replace('_', ' ')}
-                                                    path={'./characters/' + character}
-                                                    key={character}
-                                                    onClick={() => setCharactersFinished(characters_finished.filter((char) => char != character))}
-                                                />
-                                    })
-                                :
-                                    <p>{"You haven't marked any as beaten yet. If you've already beaten one or more, go to the other tab and click the character to move them to this screen."}
-                                    </p>
-                            }
-                        </section>
-                    </section>
-            }
+            <RandomButton 
+                charactersLeft={charactersLeft} 
+                setCharactersFinished={setCharactersFinished} 
+                charactersFinished={charactersFinished}
+            />
+        
+            <section className='multi-display'>
+                <section className='display-header'>Finished</section>
+                <section className='tile-wrapper'>
+                    {
+                        charactersFinished.map(character => {
+                            return <CharacterTile 
+                                        character_name={character.replace('.png','').replace('_', ' ')}
+                                        path={'./characters/' + character}
+                                        key={character}
+                                        onClick={() => setCharactersFinished(charactersFinished.filter((char) => char != character).sort())}
+                                    />
+                        })
+                    }
+                </section>
+            </section>
             
         </section>
+        <section id='reset' onClick={() => setCharactersFinished([])}>
+            <p>Reset</p>
+        </section>
+        </>
     )
 }

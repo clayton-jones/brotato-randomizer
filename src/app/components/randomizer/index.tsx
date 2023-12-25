@@ -1,8 +1,6 @@
 'use client'
 import {useState, useEffect, useRef} from 'react'
 import MultiCharacterDisplay from '../multi_character_display'
-import RandomButton from '../random-button';
-import { finished } from 'stream';
 
 type RandomizerProps = {
     image_array: string[];
@@ -37,15 +35,9 @@ export default function Randomizer(props: RandomizerProps) {
 
     return (
         <>
-            <RandomButton 
-                charactersLeft={charactersLeft} 
-                setCharactersFinished={setCharactersFinished} 
-                charactersFinished={charactersFinished}
-            />
-            
             <MultiCharacterDisplay 
-                characters_finished={charactersFinished} 
-                characters_left={charactersLeft} 
+                charactersFinished={charactersFinished} 
+                charactersLeft={charactersLeft} 
                 setCharactersFinished={setCharactersFinished}
             />
         </>
