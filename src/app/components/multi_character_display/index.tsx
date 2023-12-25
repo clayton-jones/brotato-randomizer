@@ -70,7 +70,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                                     })
                                 :
                                     <p>You haven't marked any as beaten yet. 
-                                        If you've already beaten one or more, go to the other tab and hover the character and click the checkbox to move them to this screen.
+                                        If you've already beaten one or more, go to the other tab and click the character to move them to this screen.
                                     </p>
                             }
                         </section>
