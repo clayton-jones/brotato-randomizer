@@ -9,13 +9,17 @@
 .multi-display {
     background-color: gray;
     height: 70vh;
-    overflow: auto;
+    overflow: hidden;
     width: 30vw;
     min-width: 150px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &:hover {
+        overflow: auto
+    }
 
     p {
         margin: 1em;
