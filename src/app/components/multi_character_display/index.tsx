@@ -69,8 +69,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                                                 />
                                     })
                                 :
-                                    <p>You haven't marked any as beaten yet. 
-                                        If you've already beaten one or more, go to the other tab and click the character to move them to this screen.
+                                    <p>{"You haven't marked any as beaten yet. If you've already beaten one or more, go to the other tab and click the character to move them to this screen."}
                                     </p>
                             }
                         </section>
