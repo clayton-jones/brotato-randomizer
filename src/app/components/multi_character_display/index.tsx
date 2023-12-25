@@ -19,17 +19,14 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                 <section className='display-header'>To-Do</section>
                 <section className='tile-wrapper'>
                     {
-                        charactersLeft.length ?
-                            charactersLeft.map(character => {
-                                return <CharacterTile 
-                                            character_name={character.replace('.png','').replace('_', ' ')}
-                                            path={'./characters/' + character}
-                                            key={character}
-                                            onClick={() => setCharactersFinished([character, ...charactersFinished])}
-                                        />
-                            })
-                        :
-                            <p>Congratulations! You beat them all!</p>
+                        charactersLeft.map(character => {
+                            return <CharacterTile 
+                                        character_name={character.replace('.png','').replace('_', ' ')}
+                                        path={'./characters/' + character}
+                                        key={character}
+                                        onClick={() => setCharactersFinished([character, ...charactersFinished])}
+                                    />
+                        })
                     }
                 </section>
             </section>
