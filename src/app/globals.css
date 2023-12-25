@@ -35,13 +35,13 @@ body {
     width: 100vw;
   }
   
-  #page-title {
-    font-size: 4em;
-    font-family: auto;
-    text-align: center;
-  }
-  
-  footer {
-    margin-top: 7em;
-    font-size: .75em;
-  }
+#page-title {
+  font-size: 4em;
+  font-family: auto;
+  text-align: center;
+}
+
+footer {
+  margin-top: 7em;
+  font-size: .75em;
+}

@@ -39,6 +39,7 @@ export default function Randomizer(props: RandomizerProps) {
                 charactersFinished={charactersFinished} 
                 charactersLeft={charactersLeft} 
                 setCharactersFinished={setCharactersFinished}
+                totalCharacterCount={image_array.length}
             />
         </>
     )
