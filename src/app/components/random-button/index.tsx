@@ -48,6 +48,16 @@ export default function RandomButton(props: RandomButtonProps) {
         }, 1000)
     }
 
+    function resetRollButton() {
+        setImagePath('./base.png');
+        setShowFinishedButton(false);
+        setCharacterName('Click to roll')
+    }
+
+    useEffect(() => {
+        if (!charactersFinished.length) resetRollButton();
+    },[charactersFinished])
+
     function getRandomInt(): number {
         return Math.floor(Math.random() * charactersLeft.length);
     }
