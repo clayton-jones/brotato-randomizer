@@ -41,6 +41,13 @@ body {
   text-align: center;
 }
 
+#subtitle {
+  font-size: 2em;
+  font-family: auto;
+  margin-top: -20px;
+
+}
+
 footer {
   margin-top: 7em;
   font-size: .75em;
