@@ -9,8 +9,7 @@
 .multi-display {
     background-color: gray;
     height: 70vh;
-    overflow: scroll;
-    // min-height: 45vh;
+    overflow: auto;
     width: 30vw;
     min-width: 150px;
     border-radius: 5px;
@@ -38,7 +37,6 @@
 
 #reset {
     width: 8vw;
-    // min-width: 85px;
     display: flex;
     align-items: center;
     justify-content: center;
