@@ -31,7 +31,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                         <p>Finished</p>
                     </section>
                 </section>
-                <section id='reset'>
+                <section id='reset' onClick={() => setCharactersFinished([])}>
                     <p>Reset</p>
                 </section>
             </section>
