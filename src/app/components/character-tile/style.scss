@@ -8,12 +8,12 @@
     align-items: center;
     justify-content: center;
     margin: 1em;
+    cursor: pointer;
 
     p {
         text-align: center;
         text-transform: capitalize;
         font-size: 1.1em;
         font-weight: 600;
-        cursor: default;
     }
 }
