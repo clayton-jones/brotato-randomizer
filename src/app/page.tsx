@@ -7,6 +7,7 @@ export default async function Home() {
   return (
     <main>
       <h1 id="page-title">Brotato Randomizer</h1>
+      <h2 id='subtitle'>{'& Challenge Tracker'}</h2>
       <Randomizer image_array={image_array}/>
       <footer>Created by Clayton Jones</footer>
     </main>
