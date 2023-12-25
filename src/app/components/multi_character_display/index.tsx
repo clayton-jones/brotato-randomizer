@@ -13,26 +13,26 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
     let {characters_left, characters_finished, setCharactersFinished} = props;
     let [tabLeftActive, setTabLeftActive] = useState(true);
 
-    
-
-    function moveToCharactersLeft(character: string) {
-        
-    }
 
     return(
         <section id='display-wrapper'>
-            <section id='tab-wrapper'>
-                <section 
-                    className={'display-tab left' + (tabLeftActive ? ' active' : '')} 
-                    onClick={() => setTabLeftActive(true)}
-                >
-                    <p>To-do</p>
-                </section> 
-                <section 
-                    className={'display-tab right' + (tabLeftActive ? '' : ' active')} 
-                    onClick={() => setTabLeftActive(false)}
-                >
-                    <p>Finished</p>
+            <section id='display-header'>
+                <section id='tab-wrapper'>
+                    <section 
+                        className={'display-tab left' + (tabLeftActive ? ' active' : '')} 
+                        onClick={() => setTabLeftActive(true)}
+                    >
+                        <p>To-do</p>
+                    </section> 
+                    <section 
+                        className={'display-tab right' + (tabLeftActive ? '' : ' active')} 
+                        onClick={() => setTabLeftActive(false)}
+                    >
+                        <p>Finished</p>
+                    </section>
+                </section>
+                <section id='reset'>
+                    <p>Reset</p>
                 </section>
             </section>
 
