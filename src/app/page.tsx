@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import Randomizer from './components/randomizer'
 export default async function Home() {
     const image_array = await fs.readdir("./public/characters")
-    image_array.shift()
+    // image_array.shift()
 
   return (
     <main>
