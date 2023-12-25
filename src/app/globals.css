@@ -26,17 +26,21 @@ main {
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-  height: 100vh;
-  width: 100vw;
-}
-
-#page-title {
-  font-size: 4em;
-  font-family: auto;
-  text-align: center;
-}
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  #page-title {
+    font-size: 4em;
+    font-family: auto;
+    text-align: center;
+  }
+  
+  footer {
+    font-size: .75em;
+  }
