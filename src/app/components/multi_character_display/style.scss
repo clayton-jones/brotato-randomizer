@@ -46,7 +46,6 @@
     background-color: rgb(157, 19, 19);
     border-radius: 5px;
     cursor: pointer;
-    margin-top: -2em;
     height: 2.5em;
 
     &:hover {
@@ -85,7 +84,7 @@
     background: inherit;
     font-size: 2.5em;
     font-weight: 500;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
 }
 
 .tile-wrapper {
