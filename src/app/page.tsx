@@ -9,7 +9,13 @@ export default async function Home() {
       <h1 id="page-title">Brotato Randomizer</h1>
       <h2 id='subtitle'>{'& Challenge Tracker'}</h2>
       <Randomizer image_array={image_array}/>
-      <footer>Created by Clayton Jones</footer>
+      <footer>
+        <p>Created by Clayton Jones</p>
+        <section>
+          <img src="./linkedin.png" alt="linkedin-icon" />
+          <a href='www.linkedin.com/in/claytonjjones'>linkedin.com/in/claytonjjones</a>
+        </section>
+      </footer>
     </main>
   )
 }

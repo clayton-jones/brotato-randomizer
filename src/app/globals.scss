@@ -51,5 +51,29 @@ body {
 
 footer {
   margin-top: 7em;
-  font-size: .75em;
+  margin-bottom: 1em;
+  font-size: 0.85em;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    text-align: center;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    img {
+      width: 1.75em;
+      margin-right: 5px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
 }
