@@ -11,10 +11,11 @@ export default async function Home() {
       <Randomizer image_array={image_array}/>
       <footer>
         <p>Created by Clayton Jones</p>
-        <section>
+        
+        <a href='www.linkedin.com/in/claytonjjones'>
           <img src="./linkedin.png" alt="linkedin-icon" />
-          <a href='www.linkedin.com/in/claytonjjones'>linkedin.com/in/claytonjjones</a>
-        </section>
+          linkedin.com/in/claytonjjones
+        </a>
       </footer>
     </main>
   )

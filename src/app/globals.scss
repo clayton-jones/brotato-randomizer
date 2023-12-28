@@ -60,7 +60,7 @@ footer {
     text-align: center;
   }
 
-  section {
+  a {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -71,7 +71,7 @@ footer {
       margin-right: 5px;
     }
 
-    a:hover {
+    &:hover {
       text-decoration: underline;
     }
   }
