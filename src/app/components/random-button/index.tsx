@@ -7,6 +7,8 @@ type RandomButtonProps = {
     charactersLeft: string[];
     charactersFinished: string[];
     setCharactersFinished: Function;
+    winner: boolean;
+    setWinner: Function
 }
 
 export default function RandomButton(props: RandomButtonProps) {
@@ -14,17 +16,16 @@ export default function RandomButton(props: RandomButtonProps) {
     const [characterName, setCharacterName] = useState('Click to roll');
     const [showFinishedButton, setShowFinishedButton] = useState(false)
 
-    const {charactersLeft, charactersFinished, setCharactersFinished} = props;
+    const {charactersLeft, charactersFinished, setCharactersFinished, winner, setWinner} = props;
 
     function roll() {
+        if (!charactersLeft.length) {
+            return
+        }
         setCharacterName('')
         setShowFinishedButton(false)
         let character: string
 
-        if (!charactersLeft.length) {
-            setCharacterName('You win!')
-            return
-        }
 
         if (charactersLeft.length === 1) {
             character = charactersLeft[0];
@@ -71,16 +72,22 @@ export default function RandomButton(props: RandomButtonProps) {
 
     useEffect(() => {
         if (!charactersLeft.length) {
+            setWinner(true)
             setImagePath('./brotato.png')
-            setCharacterName('You win!')
+            setCharacterName('YOU WIN!')
             return
+        }
+
+        if (charactersLeft.length && imagePath == './brotato.png') {
+            setImagePath('./base.png')
+            setCharacterName('')
         }
     }, [charactersLeft])
 
 
     return (
-        <section id='button-wrapper'>
-            <section onClick={roll} id='roll-button'>
+        <section id='button-wrapper'  >
+            <section onClick={roll} id='roll-button' className={`${winner ? 'winner' : ''}`}>
                 <img src={imagePath} />
             </section>
             <p>{characterName}</p>

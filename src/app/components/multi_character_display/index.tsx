@@ -3,7 +3,7 @@ import './style.scss'
 import CharacterTile from '../character-tile';
 import RandomButton from '../random-button';
 import Counter from '../counter';
-import { useEffect } from 'react';
+import { useState } from 'react';
 
 type DisplayProp = {
     charactersLeft: string[];
@@ -14,6 +14,12 @@ type DisplayProp = {
 
 export default function MultiCharacterDisplay(props: DisplayProp) {
     let {charactersLeft, charactersFinished, setCharactersFinished, totalCharacterCount} = props;
+    const [winner, setWinner] = useState(false)
+
+    function reset() {
+        setCharactersFinished([])
+        setWinner(false)
+    }
 
     return(
         <>
@@ -42,6 +48,8 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                     charactersLeft={charactersLeft} 
                     setCharactersFinished={setCharactersFinished} 
                     charactersFinished={charactersFinished}
+                    winner={winner}
+                    setWinner={setWinner}
                 />
             </section>
         
@@ -54,7 +62,10 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                                         character_name={character.replace('.png','').replace('_', ' ')}
                                         path={'./characters/' + character}
                                         key={character}
-                                        onClick={() => setCharactersFinished(charactersFinished.filter((char) => char != character).sort())}
+                                        onClick={() => {
+                                            setCharactersFinished(charactersFinished.filter((char) => char != character).sort())
+                                            setWinner(false)
+                                        }}
                                     />
                         })
                     }
@@ -62,7 +73,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
             </section>
             
         </section>
-        <section id='reset' onClick={() => setCharactersFinished([])}>
+        <section id='reset' onClick={reset}>
             <p>Reset</p>
         </section>
         </>
