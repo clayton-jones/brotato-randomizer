@@ -22,7 +22,47 @@
             cursor: pointer;
             height: 50vh;
         }
+
+        &.winner {
+            --test: #374554;
+            --black: #4a4a4a;
+
+            --angle: 0deg;
+            // border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+            border-image: conic-gradient(from var(--angle), 
+                rgb(164 222 251), 
+                rgb(164 222 251), 
+                var(--test),
+                var(--black),
+                var(--test),
+                rgb(164 222 251), 
+                rgb(164 222 251), 
+                var(--test),
+                var(--black), 
+                var(--test),
+                rgb(164 222 251), 
+                rgb(164 222 251), 
+                var(--test),
+                var(--black), 
+                var(--test),
+                rgb(164 222 251), 
+                rgb(164 222 251), 
+                var(--test),
+                var(--black),
+                var(--test),
+                rgb(164 222 251)) 1;
+            animation: 4s rotate linear infinite;
+
+            @keyframes rotate {
+                to {
+                    --angle: 360deg;
+                }
+            }
+
+            
+        }
     }
+
 
     p {
         margin-top: -75px;
@@ -43,4 +83,11 @@
             padding-top: 2px;
         }
     }
+    
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
 }

@@ -5,10 +5,11 @@ import './style.scss'
 type CounterProps = {
     numberOfFinishedCharacters: number;
     totalCharacterCount: number;
+    winner: boolean;
 }
 
 export default function Counter(props: CounterProps) {
-    const { numberOfFinishedCharacters, totalCharacterCount } = props;
+    const { numberOfFinishedCharacters, totalCharacterCount, winner } = props;
     const [pulsate, setPulsate] = useState(false);
 
     let initialRender = useRef(0)
@@ -27,7 +28,7 @@ export default function Counter(props: CounterProps) {
     }, [numberOfFinishedCharacters])
     
     return (
-        <section id='counter' >
+        <section id='counter' className={`${winner ? 'win' : ''}`}>
             {`${numberOfFinishedCharacters} / ${totalCharacterCount}`}
         </section>
     )
