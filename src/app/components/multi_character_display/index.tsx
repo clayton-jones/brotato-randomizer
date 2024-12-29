@@ -78,8 +78,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
         <section id='reset' onClick={reset}>
             <p>Reset</p>
         </section>
-        {winner ? <Lasers></Lasers> : <></>}
-        
+        <Lasers winner={winner}></Lasers>        
         </>
     )
 }
