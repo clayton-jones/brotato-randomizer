@@ -3,6 +3,7 @@ import './style.scss'
 import CharacterTile from '../character-tile';
 import RandomButton from '../random-button';
 import Counter from '../counter';
+import Lasers from '../lasers';
 import { useState } from 'react';
 
 type DisplayProp = {
@@ -24,7 +25,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
     return(
         <>
         <section id='display-wrapper'>
-            <section className='multi-display'>
+            <section className={`${winner ? 'multi-display winner' : 'multi-display'}`}>
                 <section className='display-header'>To-Do</section>
                 <section className='tile-wrapper'>
                     {
@@ -39,10 +40,11 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                     }
                 </section>
             </section>
-            <section>
+            <section id='middle'>
                 <Counter 
                     numberOfFinishedCharacters={charactersFinished.length}
                     totalCharacterCount={totalCharacterCount}
+                    winner={winner}
                 />
                 <RandomButton 
                     charactersLeft={charactersLeft} 
@@ -53,7 +55,7 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
                 />
             </section>
         
-            <section className='multi-display'>
+            <section className={`${winner ? 'multi-display winner' : 'multi-display'}`}>
                 <section className='display-header'>Finished</section>
                 <section className='tile-wrapper'>
                     {
@@ -76,6 +78,8 @@ export default function MultiCharacterDisplay(props: DisplayProp) {
         <section id='reset' onClick={reset}>
             <p>Reset</p>
         </section>
+        {winner ? <Lasers></Lasers> : <></>}
+        
         </>
     )
 }

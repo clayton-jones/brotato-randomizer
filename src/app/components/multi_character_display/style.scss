@@ -27,6 +27,18 @@
     }
 }
 
+#middle {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.multi-display.winner {
+    opacity: 20%;
+}
+
 #tab-wrapper {
     display: flex;
 

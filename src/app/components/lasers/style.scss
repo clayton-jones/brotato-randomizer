@@ -1,0 +1,61 @@
+.laser-beam {
+  position: absolute;
+  left: 50%;
+  bottom: -200%;
+  width: 3px;
+  height: 500%;
+  z-index: -1;
+  background: rgba(164, 222, 251,0.6);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(164, 222, 251, 1);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(164, 222, 251, 1);
+  box-shadow: 0px 0px 15px 0px rgba(164, 222, 251, 1);
+  -webkit-animation: laser 6.8s infinite;
+  animation: laser 6.8s infinite;
+  
+  &.red {
+    -webkit-animation: laser 7s infinite;
+    animation: laser 7s infinite;
+    background: rgba(236,19,65,0.6);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(236,19,65,1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(236,19,65,1);
+    box-shadow: 0px 0px 15px 0px rgba(236,19,65,1);
+  }
+  
+  &.purple {
+    -webkit-animation: laser 7.2s infinite;
+    animation: laser 7.2s infinite;
+    background: rgba(204, 102, 255, 0.6);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(204, 102, 255,1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(204, 102, 255,1);
+    box-shadow: 0px 0px 15px 0px rgba(204, 102, 255,1);
+  }
+  
+  &.green {
+    -webkit-animation: laser 6.3s infinite;
+    animation: laser 6.3s infinite;
+    background: rgba(86, 212, 69, 0.6);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(86, 212, 69,1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(86, 212, 69,1);
+    box-shadow: 0px 0px 15px 0px rgba(86, 212, 69,1);
+  }
+  &.yellow {
+    -webkit-animation: laser 6.5s infinite;
+    animation: laser 6.5s infinite;
+    background: rgba(211, 214, 29, 0.6);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(211, 214, 29, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(211, 214, 29, 1);
+    box-shadow: 0px 0px 15px 0px rgba(211, 214, 29, 1);
+  }
+}
+
+@keyframes laser {
+    0% {
+        transform: rotate(75deg);
+    }
+    50% {
+        transform: rotate(-75deg);
+    }
+    100% {
+        transform: rotate(75deg);
+    }
+}
